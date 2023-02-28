@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+
+
+{% block title %}
+    Студет
+{% endblock title %}
+
+
+{% block content %}
+    {{ student.first_name }}
+    <p>
+        <a class="btn btn-primary" href="{% url 'students_view' %}"> Обратно </a>
+    </p>
+    {% if user.is_authenticated %}
+        {{ student.email }}
+    {% endif %}
+{% endblock content %}
